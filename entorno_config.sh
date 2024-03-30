@@ -20,7 +20,7 @@ sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
 fc-cache -fv
 
 # Alacritty
-mv alacritty -d ~/.config/
+mv alacritty ~/.config/
 
 # bash_aliases
 mv bash_aliases ~/.bash_aliases
