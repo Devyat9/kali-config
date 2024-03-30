@@ -1,0 +1,2 @@
+F10
+  tdrop -x 5% -w 1710 -h 840 -a alacritty --class dropdown

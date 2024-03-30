@@ -1,0 +1,34 @@
+import:
+  - "~/.config/alacritty/catppuccin-mocha.yml"
+
+scrollback:
+  history: 1000000
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Never
+
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+  size: 11
+
+
+env:
+  TERM: xterm-256color
+
+# hide mouse when typing:
+#mouse:
+#    hide_when_typing: true

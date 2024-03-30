@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/tuusuario/mount-vmhgfs.sh
+Hidden=false
+NoDisplay=false
+X-KDE-Autostart-enabled=true
+Name=Mount VMware Shared Folders
+Comment=Auto mount VMware shared folders at login

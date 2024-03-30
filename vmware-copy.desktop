@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Vmware Copy
+Exec=/usr/bin/vmware-user-suid-wrapper
+Terminal=false
