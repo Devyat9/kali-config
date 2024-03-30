@@ -1,5 +1,7 @@
 # Kali config
-IDK
+Dropdown terminal (F10) <br>
+**File Location:** ```~/.config/sxhkd/sxhkdrc``` <br><br>
+**Tmux prefix:** ```Ctrl+s```
 ## Terminal dropdown
 https://github.com/noctuid/tdrop
 ## Terminal font (JetBrainsMono) @ryanoasis 
