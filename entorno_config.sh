@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Deleting default folders
+rm -rf ~/{Music,Pictures,Public,Templates,Videos}
+
 # Update and upgrade
 sudo apt update; sudo apt upgrade -y
 
