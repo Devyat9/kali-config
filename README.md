@@ -5,6 +5,10 @@
 **File Location:** ```~/.tmux.conf```
 ## Terminal dropdown
 https://github.com/noctuid/tdrop
+## Config result
+![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/login.png?raw=true)
+![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/desktop.png?raw=true)
+![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/term_tmux.png?raw=true)
 ## Terminal font (JetBrainsMono) @ryanoasis 
 https://github.com/ryanoasis/nerd-fonts
 ## Alacritty theme (Mocha) @catppuccin
