@@ -1,4 +1,6 @@
 #!/bin/bash
+# Time-zone
+sudo timedatectl set-timezone Chile/Continental
 
 # Deleting default folders
 rm -rf ~/{Music,Pictures,Public,Templates,Videos}
