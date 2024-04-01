@@ -20,9 +20,18 @@ mv sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 
 # Fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
-sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
-fc-cache -fv
+# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+# sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
+# fc-cache -fv
+
+# Fonts - new
+mkdir -p ~/.local/share/fonts/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip
+unzip Iosevka.zip -d ~/.local/share/fonts/
+unzip RobotoMono.zip -d ~/.local/share/fonts/
+fc-cache -f
+
 
 # Alacritty
 mv alacritty ~/.config/
