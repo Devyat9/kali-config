@@ -1,7 +1,7 @@
 # Kali config
 ![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/login.png?raw=true)
 ![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/desktop.png?raw=true)
-![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/term_tmux.png?raw=true)
+![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/term_tmuxv2.png?raw=true)
 ## 
 **Dropdown terminal:** ```super + Return```
 
