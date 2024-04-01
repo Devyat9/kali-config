@@ -3,7 +3,7 @@
 ![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/desktop.png?raw=true)
 ![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/term_tmux.png?raw=true)
 ## 
-**Dropdown terminal:** ```F10```
+**Dropdown terminal:** ```super + Return```
 
 **File Location:** ```~/.config/sxhkd/sxhkdrc```
 
