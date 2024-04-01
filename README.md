@@ -3,19 +3,29 @@
 ![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/desktop.png?raw=true)
 ![alt text](https://github.com/Devyat-XIII/kali-config/blob/main/result_images/term_tmux.png?raw=true)
 ## 
-**Dropdown terminal:** ```F10``` <br>
-**File Location:** ```~/.config/sxhkd/sxhkdrc``` <br><br>
-**Tmux prefix:** ```Ctrl+s```  <br>
+**Dropdown terminal:** ```F10```
+
+**File Location:** ```~/.config/sxhkd/sxhkdrc```
+
+**Tmux prefix:** ```Ctrl+s```
+
 **File Location:** ```~/.tmux.conf```
-##
-## Terminal dropdown @noctuid
+
+## Credits
+Terminal dropdown @noctuid
 https://github.com/noctuid/tdrop
-## Terminal font (JetBrainsMono) @ryanoasis 
+
+Terminal font (JetBrainsMono) @ryanoasis 
 https://github.com/ryanoasis/nerd-fonts
-## Alacritty theme (Mocha) @catppuccin
+
+Alacritty theme (Mocha) @catppuccin
 https://github.com/catppuccin/alacritty
-## Tmux theme @wfxr
+
+Tmux theme @wfxr
 https://github.com/wfxr/tmux-power
-## Images
-@Christian Benavides https://wall.alphacoders.com/big.php?i=1288004 <br>
+
+Wallpaper (desktop)
+@Christian Benavides https://wall.alphacoders.com/big.php?i=1288004 
+
+Wallpaper (login)
 @patrika https://wall.alphacoders.com/big.php?i=1321259
