@@ -69,3 +69,4 @@ kwriteconfig5 --file startkderc --group General --key systemdBoot false
 # Config autostart
 mkdir ~/.config/autostart/
 mv *.desktop ~/.config/autostart/
+mv mount-vmhgfs.sh ~/.config/autostart/
