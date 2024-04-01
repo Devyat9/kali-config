@@ -27,10 +27,11 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Configuración de historial
-setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
+HISTFILE=~/.zsh_history
 export HISTSIZE=10000000
 export SAVEHIST=10000000
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
 
 # Configuración del prompt
 PROMPT='%F{31}┌──[%F{red}$(ip -4 addr | grep -v "127.0.0.1" | grep -v "secondary" | grep -oP "(?<=inet\s)\d+(\.\d+){3}" | sed -z "s/\n/|/g;s/|\$/\n/" | rev | cut -c 2- | rev)%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
