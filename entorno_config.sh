@@ -8,8 +8,8 @@ rm -rf ~/{Music,Pictures,Public,Templates,Videos}
 # Update and upgrade
 sudo apt update; sudo apt upgrade -y
 
-# Install alacritty, sxhkd (dropdown bind f10), tmux, bat, lsd
-sudo apt install alacritty sxhkd tmux bat lsd -y
+# Install alacritty, sxhkd (dropdown bind f10), tmux, bat, lsd, flameshot 
+sudo apt install alacritty sxhkd tmux bat lsd flameshot -y
 
 # Install tdrop
 git clone https://github.com/noctuid/tdrop && cd tdrop && sudo make install && cd ..
