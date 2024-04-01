@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/tuusuario/mount-vmhgfs.sh
+Exec=/home/kali/.config/autostart/mount-vmhgfs.sh
 Hidden=false
 NoDisplay=false
 X-KDE-Autostart-enabled=true
