@@ -70,3 +70,4 @@ kwriteconfig5 --file startkderc --group General --key systemdBoot false
 mkdir ~/.config/autostart/
 mv *.desktop ~/.config/autostart/
 mv mount-vmhgfs.sh ~/.config/autostart/
+chmod +x ~/.config/autostart/mount-vmhgfs.sh
