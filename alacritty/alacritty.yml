@@ -80,7 +80,7 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 1000000
+  history: 10000000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -580,4 +580,4 @@ key_bindings:
 import:
   - "~/.config/alacritty/catppuccin-mocha.yml"
 scrollback:
-  history: 1000000
+  history: 10000000
