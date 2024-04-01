@@ -72,7 +72,7 @@ alias nhosts="sudo nano /etc/hosts"
 
 #shutdown or reboot
 alias ssn="sudo shutdown now"
-alias sr="sudo reboot"
+alias ssr="sudo reboot"
 
 
 # Show open ports
