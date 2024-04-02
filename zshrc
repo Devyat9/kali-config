@@ -68,11 +68,12 @@ export WEBPARAM="$SECLISTS/Discovery/Web-Content/burp-parameter-names.txt"
 # Created by `pipx`
 export PATH="$PATH:/home/kali/.local/bin"
 
+# Warning! Tmux break this!
 # Log everything! 0=off 1=on files store on /var/log/session/session.$USER.$$.$timestamp
-log_mode=0
-if [ "$log_mode" -eq 1 ] && [ -z "$SESSION_RECORDING" ]; then
-    export SESSION_RECORDING=1
-    timestamp=$(date "+%d-%m-%Y-%H_%M_%S")
-    output="/var/log/session/session.$USER.$$.$timestamp"
-    script -t -f -q 2>"${output}.timing" "$output"
-fi
+#log_mode=0
+#if [ "$log_mode" -eq 1 ] && [ -z "$SESSION_RECORDING" ]; then
+#    export SESSION_RECORDING=1
+#    timestamp=$(date "+%d-%m-%Y-%H_%M_%S")
+#    output="/var/log/session/session.$USER.$$.$timestamp"
+#    script -t -f -q 2>"${output}.timing" "$output"
+#fi
