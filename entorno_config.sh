@@ -47,6 +47,7 @@ mv tmux ~/.tmux
 mv tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # prefix + i
+mv tmux_start_logging.sh .local/share/
 
 # Wallpaper
 sudo cp desktop.jpg /usr/share/backgrounds/kali-16x9/default
