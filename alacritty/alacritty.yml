@@ -580,9 +580,6 @@ key_bindings:
 scrollback:
   history: 10000000
 
-env:
-  TERM: xterm-256color
-
 colors:
     primary:
         background: "#1E1E2E" # base
