@@ -42,9 +42,11 @@ if ip link show eth0 > /dev/null 2>&1; then
     if ip link show tun0 > /dev/null 2>&1; then
         PROMPT='%F{31}┌──[%F{red}$(ip -4 addr | grep -v "127.0.0.1" | grep -v "secondary" | grep -oP "(?<=inet\s)\d+(\.\d+){3}" | sed -z "s/\n/|/g;s/|\$/\n/")%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
 %F{31}└──╼[%F{white}%D{%F %T}%F{31}]%f> '
+        precmd() { echo }
     else
         PROMPT='%F{31}┌──[%F{red}$(ip -4 addr | grep -v "127.0.0.1" | grep -v "secondary" | grep -oP "(?<=inet\s)\d+(\.\d+){3}" | sed -z "s/\n/|/g;s/|\$/\n/" | rev | cut -c 2- | rev)%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
 %F{31}└──╼[%F{white}%D{%F %T}%F{31}]%f> '
+        precmd() { echo }
     fi
 fi
 
