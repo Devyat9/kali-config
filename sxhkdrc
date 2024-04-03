@@ -1,5 +1,6 @@
 super + Return
   tdrop -x 5% -w 1710 -h 840 -a alacritty --class dropdown
+# tdrop -x 10% -w 2000 -h 1200 -a alacritty --class dropdown (2560x1440)
 shift + alt + s
     /usr/bin/flameshot gui
 ctrl + shift + f
