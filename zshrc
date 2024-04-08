@@ -50,6 +50,10 @@ if ip link show eth0 > /dev/null 2>&1; then
     fi
 fi
 
+case $- in *i*)
+    [ -z "$TMUX" ] && exec tmux
+esac
+
 export PAYLOADS="/usr/share/payloads"
 export AUTOWORDLISTS="$PAYLOADS/Auto_Wordlists"
 export FUZZDB="$PAYLOADS/FuzzDB"
