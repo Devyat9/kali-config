@@ -67,7 +67,7 @@ sudo update-alternatives --config x-session-manager
 # xfce sudo apt purge --autoremove kali-desktop-xfce
 
 # Config autostart
-mkdir ~/.config/autostart/
+mkdir -p ~/.config/autostart/
 mv *.desktop ~/.config/autostart/
 
 # Fix copy/paste, drag and drop with KDE desktop
