@@ -45,6 +45,7 @@ mv zshrc ~/.zshrc
 # Tmux
 mkdir ~/.tmux
 mv tmux ~/.tmux
+rm ~/.tmux.conf
 mv tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # prefix + i
