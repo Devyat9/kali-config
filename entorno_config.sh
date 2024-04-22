@@ -15,8 +15,8 @@ sudo apt install alacritty sxhkd tmux bat lsd flameshot -y
 git clone https://github.com/noctuid/tdrop && cd tdrop && sudo make install && cd ..
 
 # sxhkd
-mkdir ~/.config/sxhkd
-mv sxhkdrc ~/.config/sxhkd/sxhkdrc
+mkdir -p ~/.config/sxhkd
+mv sxhkdrc ~/.config/sxhkd
 
 
 # Fonts
@@ -43,11 +43,12 @@ mv bash_aliases ~/.bash_aliases
 mv zshrc ~/.zshrc
 
 # Tmux
+mkdir ~/.tmux
 mv tmux ~/.tmux
 mv tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # prefix + i
-mv tmux_start_logging.sh .local/share/
+mv tmux_start_logging.sh ~/.local/share/
 
 # Wallpaper
 sudo cp desktop.jpg /usr/share/backgrounds/kali-16x9/default
