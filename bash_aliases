@@ -110,7 +110,7 @@ alias pdw='pwd'
 alias upate='sudo apt update'
 
 # mount share folder on Vmware
-alias vmware_share="sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other"
+alias vmware_share="sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/ -o allow_other"
 
 
 # Extract ports and IP for Nmap
