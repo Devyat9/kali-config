@@ -25,6 +25,7 @@ bindkey '^[[Z' undo                               # shift + tab undo last action
 source ~/.bash_aliases
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export GOBIN=/home/kali/tools/go
 
 # Configuración de historial
 HISTFILE=~/.zsh_history
@@ -72,7 +73,7 @@ export WEBCOMMON="$SECLISTS/Discovery/Web-Content/common.txt"
 export WEBPARAM="$SECLISTS/Discovery/Web-Content/burp-parameter-names.txt"
 
 # Created by `pipx`
-export PATH="$PATH:/home/kali/.local/bin"
+export PATH="$PATH:/home/kali/.local/bin:/home/kali/tools/go"
 
 # Warning! Tmux break this!
 # Log everything! 0=off 1=on files store on /var/log/session/session.$USER.$$.$timestamp
@@ -83,3 +84,8 @@ export PATH="$PATH:/home/kali/.local/bin"
 #    output="/var/log/session/session.$USER.$$.$timestamp"
 #    script -t -f -q 2>"${output}.timing" "$output"
 #fi
+
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+unsetopt EXTENDED_HISTORY
