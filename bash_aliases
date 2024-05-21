@@ -134,3 +134,7 @@ function portsGrep(){
 }
 
 alias feroxbuster='/usr/bin/feroxbuster --no-state -D -s $(seq 200 299),301,302,307,401,403,405,500'
+
+
+# History
+#alias history='history 0'
