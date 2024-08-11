@@ -33,7 +33,7 @@ fc-cache -fv
 
 
 # Alacritty
-cp alacritty ~/.config/
+cp alacritty_new ~/.config/alacritty
 
 # bash_aliases
 cp bash_aliases ~/.bash_aliases
