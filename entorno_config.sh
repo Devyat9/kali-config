@@ -9,7 +9,7 @@ rm -rf ~/{Music,Pictures,Public,Templates,Videos}
 sudo apt update; sudo apt upgrade -y
 
 # Install alacritty, sxhkd (dropdown bind ctrl+enter), tmux, bat, lsd 
-sudo apt install alacritty sxhkd tmux bat lsd  -y
+sudo apt install alacritty sxhkd tmux bat lsd golang neo4j -y
 
 # Install tdrop
 git clone https://github.com/noctuid/tdrop && cd tdrop && sudo make install && cd ..
