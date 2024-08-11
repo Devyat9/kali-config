@@ -18,7 +18,6 @@ git clone https://github.com/noctuid/tdrop && cd tdrop && sudo make install && c
 mkdir -p ~/.config/sxhkd
 mv sxhkdrc ~/.config/sxhkd
 
-
 # Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
 sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
@@ -34,19 +33,19 @@ fc-cache -fv
 
 
 # Alacritty
-mv alacritty ~/.config/
+cp alacritty ~/.config/
 
 # bash_aliases
-mv bash_aliases ~/.bash_aliases
+cp bash_aliases ~/.bash_aliases
 
 # zsh
-mv zshrc ~/.zshrc
+cp zshrc ~/.zshrc
 
 # Tmux
 mkdir ~/.tmux
-mv tmux ~/.tmux
+cp tmux ~/.tmux
 rm ~/.tmux.conf
-mv tmux.conf ~/.tmux.conf
+cp tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # prefix + i
 # chmod +x tmux_start_logging.sh
@@ -61,7 +60,7 @@ sudo cp login.png /usr/share/backgrounds/kali-16x9/kali-aqua.jpg
 
 # Config autostart
 mkdir -p ~/.config/autostart/
-mv *.desktop ~/.config/autostart/
+cp *.desktop ~/.config/autostart/
 
 
 
