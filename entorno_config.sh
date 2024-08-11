@@ -8,8 +8,8 @@ rm -rf ~/{Music,Pictures,Public,Templates,Videos}
 # Update and upgrade
 sudo apt update; sudo apt upgrade -y
 
-# Install alacritty, sxhkd (dropdown bind f10), tmux, bat, lsd, flameshot 
-sudo apt install alacritty sxhkd tmux bat lsd flameshot -y
+# Install alacritty, sxhkd (dropdown bind ctrl+enter), tmux, bat, lsd 
+sudo apt install alacritty sxhkd tmux bat lsd  -y
 
 # Install tdrop
 git clone https://github.com/noctuid/tdrop && cd tdrop && sudo make install && cd ..
@@ -20,8 +20,8 @@ mv sxhkdrc ~/.config/sxhkd
 
 
 # Fonts
-# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
-# sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+sudo unzip JetBrainsMono.zip -d /usr/share/fonts/
 # fc-cache -fv
 
 # Fonts - new
@@ -49,8 +49,8 @@ rm ~/.tmux.conf
 mv tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # prefix + i
-chmod +x tmux_start_logging.sh
-mv tmux_start_logging.sh ~/.local/share/
+# chmod +x tmux_start_logging.sh
+# mv tmux_start_logging.sh ~/.local/share/
 
 # Wallpaper
 sudo cp desktop.jpg /usr/share/backgrounds/kali-16x9/default
@@ -58,19 +58,24 @@ sudo cp desktop.jpg /usr/share/backgrounds/kali/kali-ferrofluid-16x9.jpg
 sudo cp login.png /usr/share/backgrounds/kali/kali-aqua-16x9.jpg
 sudo cp login.png /usr/share/backgrounds/kali-16x9/kali-aqua.jpg
 
-# opt - Useful 
-#sudo unzip opt_useful.zip -d /opt
-#sudo chown kali:kali /opt/payloads /opt/things /opt/useful
-
-# Desktop Enviroment
-sudo apt install -y kali-desktop-kde
-sudo update-alternatives --config x-session-manager
-# Unistall 
-# xfce sudo apt purge --autoremove kali-desktop-xfce
 
 # Config autostart
 mkdir -p ~/.config/autostart/
 mv *.desktop ~/.config/autostart/
 
+
+
+# opt - Useful 
+#sudo unzip opt_useful.zip -d /opt
+#sudo chown kali:kali /opt/payloads /opt/things /opt/useful
+
+# Desktop Enviroment
+# sudo apt install -y kali-desktop-kde
+# sudo update-alternatives --config x-session-manager
+# Unistall 
+# xfce sudo apt purge --autoremove kali-desktop-xfce
+
+
+
 # Fix copy/paste, drag and drop with KDE desktop
-kwriteconfig5 --file startkderc --group General --key systemdBoot false
+# kwriteconfig5 --file startkderc --group General --key systemdBoot false
