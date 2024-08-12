@@ -33,7 +33,7 @@ fc-cache -fv
 
 
 # Alacritty
-cp alacritty_new ~/.config/alacritty
+cp -r alacritty_new ~/.config/alacritty
 
 # bash_aliases
 cp bash_aliases ~/.bash_aliases
@@ -43,7 +43,7 @@ cp zshrc ~/.zshrc
 
 # Tmux
 mkdir ~/.tmux
-cp tmux ~/.tmux
+cp -r tmux ~/.tmux
 rm ~/.tmux.conf
 cp tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
