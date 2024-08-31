@@ -92,5 +92,5 @@ export PATH="$PATH:/home/kali/.local/bin:/opt/go"
 
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+#setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
