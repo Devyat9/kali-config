@@ -65,6 +65,8 @@ mkdir -p ~/.config/autostart/
 cp *.desktop ~/.config/autostart/
 
 
+# tdrop -a -x 0 -y 0 -w 100% -h 97% alacritty --class dropdow
+
 
 # opt - Useful 
 #sudo unzip opt_useful.zip -d /opt
@@ -80,3 +82,6 @@ cp *.desktop ~/.config/autostart/
 
 # Fix copy/paste, drag and drop with KDE desktop
 # kwriteconfig5 --file startkderc --group General --key systemdBoot false
+
+
+
