@@ -141,9 +141,9 @@ alias feroxbuster='/usr/bin/feroxbuster --no-state -D -s $(seq 200 299),301,302,
 
 # Anothers
 alias zshrc='nano ~/.zshrc'
-alias v='/usr/bin/nvim'
-alias vi='/usr/bin/nvim'
-alias vim='/usr/bin/nvim'
+#alias v='/usr/bin/nvim'
+#alias vi='/usr/bin/nvim'
+#alias vim='/usr/bin/nvim'
 alias n='/usr/bin/nano'
 alias c='/usr/bin/clear'
 
