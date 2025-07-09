@@ -1,5 +1,9 @@
 ### ALIASES ###
 
+target () {
+        echo "target=\"$1\"" > ~/.target
+}
+
 #tmux
 alias tmux='tmux -u'
 
