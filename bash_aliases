@@ -42,6 +42,8 @@ alias l.="lsd -A | grep -E '^\.' --color=never"
 #alias l='ls'
 #alias l.="ls -a | grep -E '^\.' --color=never"
 
+
+
 # alias to show the date
 alias da='date "+%Y-%m-%d %A %T %Z"'
 
@@ -102,7 +104,7 @@ alias Amass='amass enum -config ~/.config/amass/config.ini -d $1'
 alias reloadzsh='source ~/.zshrc'
 #alias reloadprofile='source ~/.profile'
 
-alias cat='batcat --paging=never --style=plain --theme OneHalfDark'
+#alias cat='batcat --paging=never --style=plain'
 
 alias ..="cd ../"
 alias ...="cd ../../"
@@ -114,7 +116,7 @@ alias pdw='pwd'
 alias upate='sudo apt update'
 
 # mount share folder on Vmware
-alias vmware_share="sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/ -o allow_other"
+alias vmware_share="sudo mount -t virtiofs shareS /mnt/shares"
 
 
 # Extract ports and IP for Nmap
@@ -137,7 +139,7 @@ function portsGrep(){
     echo "Copiado al portapapeles: $OUTPUT"
 }
 
-alias feroxbuster='/usr/bin/feroxbuster --no-state -D -s $(seq 200 299),301,302,307,401,403,405,500'
+alias feroxbuster2='/usr/bin/feroxbuster --no-state -D -s $(seq 200 299),301,302,307,401,403,405,500'
 
 
 # History
@@ -201,3 +203,9 @@ function extract {
         esac
     done
 }
+
+
+
+
+alias tmux_command='sudo bash /home/kali/.tmux_command.sh'
+
