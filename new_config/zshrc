@@ -1,0 +1,299 @@
+# Zshrc config
+
+autoload -Uz compinit && compinit
+
+
+setopt interactivecomments # allow comments in interactive mode
+setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
+setopt nonomatch           # hide error message if there is no match for the pattern
+setopt notify              # report the status of background jobs immediately
+setopt numericglobsort     # sort filenames numerically when it makes sense
+setopt promptsubst         # enable command substitution in prompt
+
+source ~/.bash_aliases
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+export GOBIN=/opt/go
+
+# configure key keybindings
+bindkey -e                                        # emacs key bindings
+bindkey ' ' magic-space                           # do history expansion on space
+bindkey '^U' backward-kill-line                   # ctrl + U
+bindkey '^[[3;5~' kill-word                       # ctrl + Supr
+bindkey '^[[3~' delete-char                       # delete
+bindkey '^[[1;5C' forward-word                    # ctrl + ->
+bindkey '^[[1;5D' backward-word                   # ctrl + <-
+bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+bindkey '^[[6~' end-of-buffer-or-history          # page down
+bindkey '^[[H' beginning-of-line                  # home
+bindkey '^[[F' end-of-line                        # end
+bindkey '^[[Z' undo                               # shift + tab undo last action
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+#bindkey '^[OA' history-substring-search-up
+#bindkey '^[OB' history-substring-search-down
+
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
+
+case $- in *i*)
+    [ -z "$TMUX" ] && exec tmux
+esac
+
+
+# Configuración de historial
+HISTFILE=~/.zsh_history
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+
+#PROMPT='%F{blue}%~%f'$'\n%F{#FC7DBF}❯ %f'
+#precmd() { print -Pn "\n" }
+
+#########PROMPT='%F{blue}%~%f'$'\n%F{#FC7DBF}❯ %f'
+#if ip link show eth0 > /dev/null 2>&1; then
+#    if ip link show tun0 > /dev/null 2>&1; then
+#        PROMPT='%F{31}┌──[%F{red}$(ip -4 addr | grep -v "127.0.0.1" | grep -v "secondary" | grep -oP "(?<=inet\s)\d+(\.\d+){3}" | grep -vE "192.168.4.|172.17.0.1|172.20.0.1"| sed -z "s/\n/|/g;s/|\$/\n/")%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
+#%F{31}└──╼[%F{white}%D{%F %T}%F{31}]%f> '
+#        precmd() { echo }
+#    else
+#        PROMPT='%F{31}┌──[%F{red}$(ip -4 addr | grep -vE "192.168.4.|172.17.0.1|172.20.0.1|127.0.0.1" | grep -v "secondary" | grep -oP "(?<=inet\s)\d+(\.\d+){3}" | sed -z "s/\n/|/g;s/|\$/\n/")%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
+#%F{31}└──╼[%F{white}%D{%F %T}%F{31}]%f> '
+#        precmd() { echo }
+#    fi
+#fi
+
+#recmd() { print -Pn "\n" }
+
+
+
+
+# Variable para controlar el salto de línea inicial
+FIRST_PROMPT=true
+
+precmd() {
+  if [ "$FIRST_PROMPT" = false ]; then
+    print -Pn "\n"
+  fi
+  FIRST_PROMPT=false
+}
+
+export SECLISTS="/opt/tools/SecLists"
+
+export DIRMEDIUM="$SECLISTS/Discovery/Web-Content/directory-list-2.3-medium.txt"
+export ROCKYOU="/opt/tools/misc/rockyou.txt"
+export DNSCOMMON="$SECLISTS/Discovery/DNS/subdomains-top1million-5000.txt"
+export DNSBIG="$SECLISTS/Discovery/DNS/subdomains-top1million-110000.txt"
+export DICC="$SECLISTS/Discovery/Web-Content/dicc.txt"
+
+export DIRBIG="$SECLISTS/Discovery/Web-Content/directory-list-2.3-big.txt"
+export DIRSMALL="$SECLISTS/Discovery/Web-Content/directory-list-2.3-small.txt"
+export WEBAPI_COMMON="$SECLISTS/Discovery/Web-Content/api/api-endpoints.txt"
+export WEBAPI_MAZEN="$SECLISTS/Discovery/Web-Content/common-api-endpoints-mazen160.txt"
+export WEBCOMMON="$SECLISTS/Discovery/Web-Content/common.txt"
+export WEBPARAM="$SECLISTS/Discovery/Web-Content/burp-parameter-names.txt"
+
+
+
+setopt APPEND_HISTORY
+#setopt INC_APPEND_HISTORY
+#setopt SHARE_HISTORY
+#unsetopt EXTENDED_HISTORY
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+#. "$HOME/.cargo/env"
+
+
+# Created by `pipx` on 2024-12-28 05:47:49
+export PATH="$PATH:/home/kali/.local/bin:/opt/go:$HOME"
+
+# fuzzycheats
+# ~/.fuzzycheats.zsh
+
+fuzzycheats_widget() {
+  local topic query selected
+  local cheatdir="$HOME/.cheatsheets"
+
+  topic="${LBUFFER%% *}"
+  query="${LBUFFER#"$topic"}"
+
+  local -a fzf_opts
+  fzf_opts=(--layout=reverse -i --height 50% --no-preview --border=rounded)
+
+  local match
+  match=$(find "$cheatdir" -type f -name "$topic" 2>/dev/null | head -n1)
+
+  if [[ -n "$match" && -f "$match" ]]; then
+    selected=$(< "$match" fzf "${fzf_opts[@]}" --header="📂 Cheatsheet: $topic" --query="$query")
+  else
+    selected=$(find "$cheatdir" -type f -exec cat {} + 2>/dev/null | fzf "${fzf_opts[@]}" --header="📚 All Cheats (recursive)" --query="$topic $query")
+  fi
+
+  local ret=$?
+  if [[ $ret -eq 0 && -n "$selected" ]]; then
+    LBUFFER="$selected"
+  fi
+
+  zle reset-prompt
+  return $ret
+}
+
+zle -N fuzzycheats_widget
+# Shortcut: Ctrl+X Ctrl+P
+bindkey '^X^P' fuzzycheats_widget
+# Alternativa: Ctrl+z
+# bindkey '^Z' fuzzycheats_widget
+
+
+
+# ------------- CONFIGURACIÓN DE VARIABLES ----------------
+show_ip=true
+show_time=true
+twolines=true
+
+check_interval=10
+public_ip_check_interval=60
+
+default_interface="ludus"
+interface="$default_interface"
+manual_ip=""
+check_public_ip=false
+last_public_ip_check=0
+ip_prompt=""
+SECONDS=0
+
+# ------------- FUNCIONES DE IP ----------------
+
+get_ip_address() {
+    if [[ -n "$manual_ip" ]]; then
+        echo "$manual_ip"
+    else
+        local ip=""
+        if [[ -n "$interface" ]]; then
+            ip=$(ip -o -4 addr list "$interface" 2>/dev/null | awk '{print $4}' | cut -d/ -f1)
+        fi
+        if [[ -z "$ip" ]]; then
+            local default_iface=$(ip route get 8.8.8.8 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="dev") print $(i+1)}')
+            ip=$(ip -o -4 addr list "$default_iface" 2>/dev/null | awk '{print $4}' | cut -d/ -f1)
+        fi
+        if [[ -z "$ip" ]]; then
+            ip=$(ip -o -4 addr list | awk '$2 != "lo" {print $4}' | cut -d/ -f1 | head -n 1)
+        fi
+        echo "$ip"
+    fi
+}
+
+update_ip_in_prompt() {
+    if [[ "$show_ip" == true ]]; then
+        local new_ip=$(get_ip_address)
+        ip_prompt="$new_ip"
+    else
+        ip_prompt=""
+    fi
+}
+
+update_public_ip_if_needed() {
+    if [[ "$show_ip" == true && "$check_public_ip" == true ]]; then
+        local now=$(date +%s)
+        if (( now - last_public_ip_check >= public_ip_check_interval )); then
+            manual_ip=$(curl -s https://ifconfig.me)
+            last_public_ip_check=$now
+            update_ip_in_prompt
+        fi
+    fi
+}
+
+# ------------- FUNCIONES DE HOOK ----------------
+
+autoload -Uz add-zsh-hook
+
+precmd_update() {
+    if (( SECONDS >= check_interval )); then
+        SECONDS=0
+        update_ip_in_prompt
+        update_public_ip_if_needed
+    fi
+}
+add-zsh-hook precmd precmd_update
+
+# ------------- PROMPT PERSONALIZADO ----------------
+
+if ip link show eth0 > /dev/null 2>&1; then
+    if ip link show tun0 > /dev/null 2>&1; then
+        PROMPT='%F{31}┌──[%F{red}$(echo "$ip_prompt")%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
+%F{31}└──╼[%F{white}%D{%F %T}%F{31}]%f> '
+    else
+        PROMPT='%F{31}┌──[%F{red}$(echo "$ip_prompt")%F{blue}@%f%F{blue}%m%f%F{31}]:%f%F{yellow}[%~]%f
+%F{31}└──╼[%F{white}%D{%F %T}%F{31}]%f> '
+    fi
+else
+    # Estilo básico si no hay eth0 ni tun0
+    PROMPT='%F{blue}%~%f'$'\n%F{#FC7DBF}❯ %f'
+fi
+
+# ------------- FUNCIONES DE COMANDOS PERSONALIZADOS ----------------
+
+setip() {
+    if [[ -n "$1" ]]; then
+        if [[ "$1" == "public" ]]; then
+            manual_ip=$(curl -s https://ifconfig.me)
+            interface=""
+            check_public_ip=true
+            last_public_ip_check=$(date +%s)
+        elif [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            manual_ip="$1"
+            interface=""
+            check_public_ip=false
+        else
+            interface="$1"
+            manual_ip=""
+            check_public_ip=false
+        fi
+        update_ip_in_prompt
+    else
+        echo "Uso: setip <ip|interfaz|public>"
+    fi
+}
+
+enableip() { show_ip=true; update_ip_in_prompt }
+disableip() { show_ip=false; manual_ip=""; interface=""; update_ip_in_prompt }
+enabledate() { show_time=true }
+disabledate() { show_time=false }
+enableall() { show_ip=true; show_time=true; update_ip_in_prompt }
+disableall() { show_ip=false; show_time=false; manual_ip=""; interface=""; update_ip_in_prompt }
+
+# ------------- LOG DE COMANDOS ----------------
+
+preexec_log_command() {
+    local cmd=${1:-}
+    if [[ -n "$cmd" ]]; then
+        local date="$(date +'%d/%m/%y %H:%M')"
+        local ip="$(get_ip_address)"
+        echo "$date - $ip - $cmd" >> ~/.custom_history
+    fi
+}
+add-zsh-hook preexec preexec_log_command
+
+# Inicializar valor IP
+update_ip_in_prompt
+
+
+
+
+PROMPT='%F{blue}%~%f'$'\n%F{#FC7DBF}❯ %f'
+#precmd() { print -Pn "\n" }
+
